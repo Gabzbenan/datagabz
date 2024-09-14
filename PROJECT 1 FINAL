@@ -1,0 +1,1021 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "id": "AC0QVvIezAYk"
+   },
+   "source": [
+    "# Hola Gabriela!\n",
+    "\n",
+    "Mi nombre es David Bautista, soy code reviewer de Tripleten y hoy tengo el gusto de revisar tu proyecto.\n",
+    "\n",
+    "Cuando vea un error la primera vez, lo señalaré. Deberás encontrarlo y arreglarlo. La intención es que te prepares para un espacio real de trabajo. En un trabajo, el líder de tu equipo hará lo mismo. Si no puedes solucionar el error, te daré más información en la próxima ocasión.\n",
+    "\n",
+    "Encontrarás mis comentarios más abajo - por favor, no los muevas, no los modifiques ni los borres.\n",
+    "\n",
+    "¿Cómo lo voy a hacer? Voy a leer detenidamente cada una de las implementaciones que has llevado a cabo para cumplir con lo solicitado. Verás los comentarios de esta forma:\n",
+    "\n",
+    "<div class=\"alert alert-block alert-success\">\n",
+    "<b>Comentario del revisor</b> <a class=\"tocSkip\"></a>\n",
+    "    \n",
+    "Si todo está perfecto.\n",
+    "</div>\n",
+    "\n",
+    "\n",
+    "<div class=\"alert alert-block alert-warning\">\n",
+    "<b>Comentario del revisor</b> <a class=\"tocSkip\"></a>\n",
+    "    \n",
+    "Si tu código está bien pero se puede mejorar o hay algún detalle que le hace falta.\n",
+    "</div>\n",
+    "\n",
+    "\n",
+    "<div class=\"alert alert-block alert-danger\">\n",
+    "    \n",
+    "<b>Comentario del revisor</b> <a class=\"tocSkip\"></a>\n",
+    "    \n",
+    "Si de pronto hace falta algo o existe algún problema con tu código o conclusiones.\n",
+    "</div>\n",
+    "\n",
+    "\n",
+    "Puedes responderme de esta forma: \n",
+    "\n",
+    "<div class=\"alert alert-block alert-info\">\n",
+    "<b>Respuesta del estudiante</b> <a class=\"tocSkip\"></a>\n",
+    "</div>\n",
+    "\n",
+    "¡Empecemos!"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "\n",
+    "<div class=\"alert alert-block alert-danger\">\n",
+    "<b>Comentario del revisor</b> <a class=\"tocSkip\"></a>\n",
+    "\n",
+    "# Comentario General\n",
+    "\n",
+    "~~Hola, Gabriela, hay un aspecto importante que debemos tener en cuenta. Según lo que veo, desarrollaste el proyecto en un archivo plano de Python y lo subiste en el notebook adjuntando todo en una sola celda. Recuerda que el ideal es poder estructurarlo con el formato del notebook original del ejercicio, el cual sigue un orden acompañado de los comentarios de texto. Igualmente, te felicito por el desarrollo generado hasta el momento, quedo atento a la modificación para que podamos continuar con la revisión.~~ </div>    \n",
+    "\n",
+    "    \n",
+    "<div class=\"alert alert-block alert-danger\">\n",
+    "<b>Comentario del revisor</b> <a class=\"tocSkip\"></a>\n",
+    "\n",
+    "# Comentario General #2\n",
+    "\n",
+    "~~Hola, Gabriela, he dejado nuevos comentarios etiquetados con el #2 para que los puedas revisar y tener en cuenta.~~  </div>  \n",
+    "\n",
+    "  \n",
+    "<div class=\"alert alert-block alert-success\">\n",
+    "<b>Comentario del revisor</b> <a class=\"tocSkip\"></a>\n",
+    "\n",
+    "# Comentario General #3\n",
+    "\n",
+    "Hola, Gabriela, te felicito por el buen desarrollo del proyecto. Gracias por tener en cuenta los diferentes comentarios.   </div>      "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Paso 1\n",
+    "\n",
+    "Store 1 tiene como objetivo garantizar la coherencia en la recopilación de datos. \n",
+    "Como parte de esta iniciativa, se debe evaluar la calidad de los datos recopilados sobre los usuarios y las usuarias. Te han pedido que revises los datos recopilados y propongas cambios. A continuación verás datos sobre un usuario o una usuaria en particular; revisa los datos e identifica cualquier posible problema.\n",
+    "user_id = '32415'\n",
+    "user_name = ' mike_reed '\n",
+    "user_age = 32.0\n",
+    "fav_categories = ['ELECTRONICS', 'SPORT', 'BOOKS']\n",
+    "*Opciones:*\n",
+    "\n",
+    "1. Se debe cambiar el tipo de dato de user_id de cadena a entero.\n",
+    "    \n",
+    "2. La variable user_name contiene una cadena que tiene espacios innecesarios y un guion bajo entre el nombre y el apellido.\n",
+    "    \n",
+    "3. El tipo de dato de user_age es correcto y no hay necesidad de convertirlo.\n",
+    "    \n",
+    "4. La lista fav_categories contiene cadenas en mayúsculas. En lugar de ello, debemos convertir los valores de la lista en minúsculas."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Para cada una de las opciones, escribe en la siguiente celda markdown si la identificaste como un problema real en los datos o no. Justifica tu razonamiento. Por ejemplo, si crees que la primera opción es correcta, escríbelo y explica por qué piensas que es correcta"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "  #RESPUESTA: \n",
+    "Si se deben realizar las opciones 1,2 ya que se necesita limpiar la data y homologar, si no va ser dificil cuantificar. La opción 3 hay que convertirlo de un float a int para tener estadistica y el punto 4 igual mejor homologar entre minusculas y mayusculas.\n",
+    "Mientras más homogeneos esten los datos de cada elemento de la lista será más fácil manejarla"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Paso 2\n",
+    "Vamos a implementar los cambios que identificamos. Primero, necesitamos corregir los problemas de la variable user_name Como vimos, tiene espacios innecesarios y un guion bajo como separador entre el nombre y el apellido; tu objetivo es eliminar los espacios y luego reemplazar el guion bajo con el espacio."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "mike reed\n",
+      "kate morgan\n",
+      "john doe\n",
+      "SAMANTHA SMITH\n",
+      "David White\n",
+      "emily brown\n",
+      "Maria Garcia\n",
+      "JOSE MARTINEZ\n",
+      "lisa wilson\n",
+      "James Lee\n"
+     ]
+    }
+   ],
+   "source": [
+    "users = [\n",
+    "    ['32415', ' mike_reed ', 32.0, ['ELECTRONICS', 'SPORT', 'BOOKS'], [894, 213, 173]],\n",
+    "    ['31980', 'kate morgan', 24.0, ['CLOTHES', 'BOOKS'], [439, 390]],\n",
+    "    ['32156', ' john doe ', 37.0, ['ELECTRONICS', 'HOME', 'FOOD'], [459, 120, 99]],\n",
+    "    ['32761', 'SAMANTHA SMITH', 29.0, ['CLOTHES', 'ELECTRONICS', 'BEAUTY'], [299, 679, 85]],\n",
+    "    ['32984', 'David White', 41.0, ['BOOKS', 'HOME', 'SPORT'], [234, 329, 243]],\n",
+    "    ['33001', 'emily brown', 26.0, ['BEAUTY', 'HOME', 'FOOD'], [213, 659, 79]],\n",
+    "    ['33767', ' Maria Garcia', 33.0, ['CLOTHES', 'FOOD', 'BEAUTY'], [499, 189, 63]],\n",
+    "    ['33912', 'JOSE MARTINEZ', 22.0, ['SPORT', 'ELECTRONICS', 'HOME'], [259, 549, 109]],\n",
+    "    ['34009', 'lisa wilson ', 35.0, ['HOME', 'BOOKS', 'CLOTHES'], [329, 189, 329]],\n",
+    "    ['34278', 'James Lee', 28.0, ['BEAUTY', 'CLOTHES', 'ELECTRONICS'], [189, 299, 579]],\n",
+    "]\n",
+    "\n",
+    "\n",
+    "user_temp = []\n",
+    "for user in users:\n",
+    "\n",
+    "    user_name = user[1].replace(\"_\",\" \")\n",
+    "    user_name1 = user_name.strip()\n",
+    "    print(user_name1)\n",
+    "    \n",
+    "user_name = ' mike_reed '"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "    \n",
+    "<div class=\"alert alert-block alert-success\">\n",
+    "<b>Comentario del revisor #2 </b> <a class=\"tocSkip\"></a>\n",
+    "\n",
+    "El ejercicio estaba pensado inicialmente para modificar como ejemplo solo el caso de paso 1, sin embargo, veo que desatollaste este bucle para solucionar el problema sobre todos los user_names de la lista ``users`` y de hecho veo que aplicaste de manera correcta los métodos ``strip()`` y ``replace()``. Teniendo en cuenta todo lo anterior, veo que cumpliste con el objetivo final de este ejercicio, el cual es entender el uso de los dos métodos en cuestión, de modo que te felicito.  </div>  "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Paso 3\n",
+    "Luego, debemos dividir el user_name (nombre de usuario o usuaria) actualizado en dos subcadenas para obtener una lista que contenga dos valores: la cadena para el nombre y la cadena para el apellido."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "['mike', 'reed']\n",
+      "['kate', 'morgan']\n",
+      "['john', 'doe']\n",
+      "['SAMANTHA', 'SMITH']\n",
+      "['David', 'White']\n",
+      "['emily', 'brown']\n",
+      "['Maria', 'Garcia']\n",
+      "['JOSE', 'MARTINEZ']\n",
+      "['lisa', 'wilson']\n",
+      "['James', 'Lee']\n"
+     ]
+    }
+   ],
+   "source": [
+    "users = [\n",
+    "    ['32415', ' mike_reed ', 32.0, ['ELECTRONICS', 'SPORT', 'BOOKS'], [894, 213, 173]],\n",
+    "    ['31980', 'kate morgan', 24.0, ['CLOTHES', 'BOOKS'], [439, 390]],\n",
+    "    ['32156', ' john doe ', 37.0, ['ELECTRONICS', 'HOME', 'FOOD'], [459, 120, 99]],\n",
+    "    ['32761', 'SAMANTHA SMITH', 29.0, ['CLOTHES', 'ELECTRONICS', 'BEAUTY'], [299, 679, 85]],\n",
+    "    ['32984', 'David White', 41.0, ['BOOKS', 'HOME', 'SPORT'], [234, 329, 243]],\n",
+    "    ['33001', 'emily brown', 26.0, ['BEAUTY', 'HOME', 'FOOD'], [213, 659, 79]],\n",
+    "    ['33767', ' Maria Garcia', 33.0, ['CLOTHES', 'FOOD', 'BEAUTY'], [499, 189, 63]],\n",
+    "    ['33912', 'JOSE MARTINEZ', 22.0, ['SPORT', 'ELECTRONICS', 'HOME'], [259, 549, 109]],\n",
+    "    ['34009', 'lisa wilson ', 35.0, ['HOME', 'BOOKS', 'CLOTHES'], [329, 189, 329]],\n",
+    "    ['34278', 'James Lee', 28.0, ['BEAUTY', 'CLOTHES', 'ELECTRONICS'], [189, 299, 579]],\n",
+    "]\n",
+    "\n",
+    "\n",
+    "user_temp = []\n",
+    "for user in users:\n",
+    "    \n",
+    "    user_id = int(user[0])\n",
+    "    #Paso 2 y 3\n",
+    "    user_name = user[1].replace(\"_\",\" \")\n",
+    "    user_name1 = user_name.strip()\n",
+    "    user_name2 = user_name1.split()\n",
+    "    print(user_name2)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "    \n",
+    "<div class=\"alert alert-block alert-success\">\n",
+    "<b>Comentario del revisor #2</b> <a class=\"tocSkip\"></a>\n",
+    "\n",
+    "Acaso sucede lo mismo que en el caso anterior, el ideal era solucionar el problema para el ejemplo del paso 1; sin embargo, eres recursiva y lograste usar el bucle con el método ``split()`` para solucionar las tareas sobre todos los user_names, de modo que buen trabajo.   </div>  "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Paso 4\n",
+    "\n",
+    "¡Genial! Ahora debemos trabajar con la variable user_age. Como ya mencionamos, esta tiene un tipo de datos incorrecto. Arreglemos este problema transformando el tipo de datos y mostrando el resultado final."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "32\n",
+      "24\n",
+      "37\n",
+      "29\n",
+      "41\n",
+      "26\n",
+      "33\n",
+      "22\n",
+      "35\n",
+      "28\n"
+     ]
+    }
+   ],
+   "source": [
+    "users = [\n",
+    "    ['32415', ' mike_reed ', 32.0, ['ELECTRONICS', 'SPORT', 'BOOKS'], [894, 213, 173]],\n",
+    "    ['31980', 'kate morgan', 24.0, ['CLOTHES', 'BOOKS'], [439, 390]],\n",
+    "    ['32156', ' john doe ', 37.0, ['ELECTRONICS', 'HOME', 'FOOD'], [459, 120, 99]],\n",
+    "    ['32761', 'SAMANTHA SMITH', 29.0, ['CLOTHES', 'ELECTRONICS', 'BEAUTY'], [299, 679, 85]],\n",
+    "    ['32984', 'David White', 41.0, ['BOOKS', 'HOME', 'SPORT'], [234, 329, 243]],\n",
+    "    ['33001', 'emily brown', 26.0, ['BEAUTY', 'HOME', 'FOOD'], [213, 659, 79]],\n",
+    "    ['33767', ' Maria Garcia', 33.0, ['CLOTHES', 'FOOD', 'BEAUTY'], [499, 189, 63]],\n",
+    "    ['33912', 'JOSE MARTINEZ', 22.0, ['SPORT', 'ELECTRONICS', 'HOME'], [259, 549, 109]],\n",
+    "    ['34009', 'lisa wilson ', 35.0, ['HOME', 'BOOKS', 'CLOTHES'], [329, 189, 329]],\n",
+    "    ['34278', 'James Lee', 28.0, ['BEAUTY', 'CLOTHES', 'ELECTRONICS'], [189, 299, 579]],\n",
+    "]\n",
+    "\n",
+    "\n",
+    "user_temp = []\n",
+    "for user in users:\n",
+    "    \n",
+    "    user_age = int(user[2])\n",
+    "    print(user_age)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "    \n",
+    "<div class=\"alert alert-block alert-success\">\n",
+    "<b>Comentario del revisor #2 </b> <a class=\"tocSkip\"></a>\n",
+    "\n",
+    "Nuevamente, sucede lo mismo con el tema del ejemplo del paso 1; sin embargo, realizas la transformación de tipo de datos sobre las variables de manera correcta. Te felicito.    </div>  "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Paso 5\n",
+    "\n",
+    "Como sabemos, los datos no siempre son perfectos. Debemos considerar escenarios en los que el valor de user_age no se pueda convertir en un número entero. Para evitar que nuestro sistema se bloquee, debemos tomar medidas con anticipación.\n",
+    "\n",
+    "Escribe un código que intente convertir la variable user_age en un número entero y asigna el valor transformado a user_age_int. Si el intento falla, mostramos un mensaje pidiendo al usuario o la usuaria que proporcione su edad como un valor numérico con el mensaje: Please provide your age as a numerical value. (Proporcione su edad como un valor numérico.)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Please provide your age as a numerical value.\n"
+     ]
+    }
+   ],
+   "source": [
+    "user_age = 'treinta y dos'\n",
+    "\n",
+    "try:\n",
+    "    user_age = int(user_age)\n",
+    "except:\n",
+    "    print('Please provide your age as a numerical value.')\n",
+    "\n",
+    "  \n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "    \n",
+    "<div class=\"alert alert-block alert-danger\">\n",
+    "<b>Comentario del revisor #2</b> <a class=\"tocSkip\"></a>\n",
+    "\n",
+    "~~Acá el ejercicio, si cambia, la idea es que puedas aplicar la misma lógica pero exactamente sobre la sigiente variable.~~ \n",
+    "\n",
+    "```python\n",
+    "user_age = 'treinta y dos'   \n",
+    "```\n",
+    "</div>  \n",
+    "\n",
+    "    \n",
+    "<div class=\"alert alert-block alert-success\">\n",
+    "<b>Comentario del revisor #3</b> <a class=\"tocSkip\"></a>\n",
+    "\n",
+    "Perfecto, buen trabajo.\n",
+    "</div>  "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Paso 6\n",
+    "\n",
+    "El equipo de dirección de Store 1 te pidió ayudarles a organizar los datos de sus clientes para analizarlos y gestionarlos mejor.\n",
+    "\n",
+    "Tu tarea es ordenar esta lista por ID de usuario de forma ascendente para que sea más fácil acceder a ella y analizarla."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[['31980', 'kate morgan', 24.0, ['CLOTHES', 'BOOKS'], [439, 390]], ['32156', ' john doe ', 37.0, ['ELECTRONICS', 'HOME', 'FOOD'], [459, 120, 99]], ['32415', ' mike_reed ', 32.0, ['ELECTRONICS', 'SPORT', 'BOOKS'], [894, 213, 173]], ['32761', 'SAMANTHA SMITH', 29.0, ['CLOTHES', 'ELECTRONICS', 'BEAUTY'], [299, 679, 85]], ['32984', 'David White', 41.0, ['BOOKS', 'HOME', 'SPORT'], [234, 329, 243]], ['33001', 'emily brown', 26.0, ['BEAUTY', 'HOME', 'FOOD'], [213, 659, 79]], ['33767', ' Maria Garcia', 33.0, ['CLOTHES', 'FOOD', 'BEAUTY'], [499, 189, 63]], ['33912', 'JOSE MARTINEZ', 22.0, ['SPORT', 'ELECTRONICS', 'HOME'], [259, 549, 109]], ['34009', 'lisa wilson ', 35.0, ['HOME', 'BOOKS', 'CLOTHES'], [329, 189, 329]], ['34278', 'James Lee', 28.0, ['BEAUTY', 'CLOTHES', 'ELECTRONICS'], [189, 299, 579]]]\n"
+     ]
+    }
+   ],
+   "source": [
+    "users = [\n",
+    "    ['32415', ' mike_reed ', 32.0, ['ELECTRONICS', 'SPORT', 'BOOKS'], [894, 213, 173]],\n",
+    "    ['31980', 'kate morgan', 24.0, ['CLOTHES', 'BOOKS'], [439, 390]],\n",
+    "    ['32156', ' john doe ', 37.0, ['ELECTRONICS', 'HOME', 'FOOD'], [459, 120, 99]],\n",
+    "    ['32761', 'SAMANTHA SMITH', 29.0, ['CLOTHES', 'ELECTRONICS', 'BEAUTY'], [299, 679, 85]],\n",
+    "    ['32984', 'David White', 41.0, ['BOOKS', 'HOME', 'SPORT'], [234, 329, 243]],\n",
+    "    ['33001', 'emily brown', 26.0, ['BEAUTY', 'HOME', 'FOOD'], [213, 659, 79]],\n",
+    "    ['33767', ' Maria Garcia', 33.0, ['CLOTHES', 'FOOD', 'BEAUTY'], [499, 189, 63]],\n",
+    "    ['33912', 'JOSE MARTINEZ', 22.0, ['SPORT', 'ELECTRONICS', 'HOME'], [259, 549, 109]],\n",
+    "    ['34009', 'lisa wilson ', 35.0, ['HOME', 'BOOKS', 'CLOTHES'], [329, 189, 329]],\n",
+    "    ['34278', 'James Lee', 28.0, ['BEAUTY', 'CLOTHES', 'ELECTRONICS'], [189, 299, 579]],\n",
+    "]\n",
+    "\n",
+    "users.sort()\n",
+    "print(users)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "    \n",
+    "<div class=\"alert alert-block alert-danger\">\n",
+    "<b>Comentario del revisor #2</b> <a class=\"tocSkip\"></a>\n",
+    "\n",
+    "~~En este paso, el ideal era simplemente usar el método ``sort()`` sobre toda la lista.~~ \n",
+    "</div>  "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "<div class=\"alert alert-block alert-success\">\n",
+    "<b>Comentario del revisor #3</b> <a class=\"tocSkip\"></a>\n",
+    "\n",
+    "Perfecto, buen trabajo.\n",
+    "</div>  "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Paso 7\n",
+    "Tenemos la información de los hábitos de consumo de nuestros usuarios, incluyendo la cantidad gastada en cada una de sus categorías favoritas. La dirección está interesada en conocer la cantidad total gastada por el usuario.\n",
+    "\n",
+    "Calculemos este valor y despleguémoslo."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 25,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "1280\n"
+     ]
+    }
+   ],
+   "source": [
+    "fav_categories_low = ['electronics', 'sport', 'books']\n",
+    "spendings_per_category = [894, 213, 173]\n",
+    " # total_amount = max(spendings_per_category)\n",
+    " # total_amount = min(spendings_per_category)\n",
+    "total_amount = sum(spendings_per_category)\n",
+    "print(total_amount)\n",
+    "\n",
+    "\n",
+    " # total_amount = sum(spendings_per_category)\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "\n",
+    "    \n",
+    "<div class=\"alert alert-block alert-danger\">\n",
+    "<b>Comentario del revisor #2 </b> <a class=\"tocSkip\"></a>\n",
+    "\n",
+    "~~Este paso lo tenías que solucionar a partir de la siguiente información.~~\n",
+    "\n",
+    "```python\n",
+    "fav_categories_low = ['electronics', 'sport', 'books']\n",
+    "spendings_per_category = [894, 213, 173]\n",
+    "\n",
+    "total_amount = \n",
+    "```\n",
+    "\n",
+    "</div>  \n",
+    "\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "<div class=\"alert alert-block alert-success\">\n",
+    "<b>Comentario del revisor #3</b> <a class=\"tocSkip\"></a>\n",
+    "\n",
+    "Excelente, buen trabajo aplicando el método.\n",
+    "</div>  "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Paso 8\n",
+    "La dirección de la empresa nos pidió pensar en una manera de resumir toda la información de un usuario. Tu objetivo es crear una cadena formateada que utilice información de las variables user_id, user_name y user_age.\n",
+    "\n",
+    "Esta es la cadena final que queremos crear: User 32415 is mike who is 32 years old. (El usuario 32415 es Mike, quien tiene 32 años)."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 11,
+   "metadata": {
+    "scrolled": true
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "User 32415 is reed who is 32 years old..\n"
+     ]
+    }
+   ],
+   "source": [
+    "user_id = '32415'\n",
+    "user_name = ['mike', 'reed']\n",
+    "user_age = 32\n",
+    "user_name2 = user_name[1]\n",
+    "\n",
+    "user_info = \"User {} is {} who is {} years old..\".format(user_id, user_name2, user_age)\n",
+    "print(user_info)\n",
+    "\n",
+    "\n",
+    "    "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "\n",
+    "    \n",
+    "<div class=\"alert alert-block alert-danger\">\n",
+    "<b>Comentario del revisor #2</b> <a class=\"tocSkip\"></a>\n",
+    "\n",
+    "~~Este paso lo tenías que solucionar a partir de la siguiente información.~~\n",
+    "\n",
+    "```python\n",
+    "user_id = '32415'\n",
+    "user_name = ['mike', 'reed']\n",
+    "user_age = 32\n",
+    "\n",
+    "```\n",
+    "\n",
+    "</div>  \n",
+    "\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "<div class=\"alert alert-block alert-success\">\n",
+    "<b>Comentario del revisor #3</b> <a class=\"tocSkip\"></a>\n",
+    "\n",
+    "Perfecto.\n",
+    "</div>  "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Paso 9\n",
+    "La dirección también quiere una forma fácil de conocer la cantidad de clientes con cuyos datos contamos. Tu objetivo es crear una cadena formateada que muestre la cantidad de datos de clientes registrados.\n",
+    "\n",
+    "Esta es la cadena final que queremos crear: Hemos registrado datos de X clientes."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 12,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "We have registered data on 10 clients.\n"
+     ]
+    }
+   ],
+   "source": [
+    "users = [\n",
+    "    ['32415', ' mike_reed ', 32.0, ['ELECTRONICS', 'SPORT', 'BOOKS'], [894, 213, 173]],\n",
+    "    ['31980', 'kate morgan', 24.0, ['CLOTHES', 'BOOKS'], [439, 390]],\n",
+    "    ['32156', ' john doe ', 37.0, ['ELECTRONICS', 'HOME', 'FOOD'], [459, 120, 99]],\n",
+    "    ['32761', 'SAMANTHA SMITH', 29.0, ['CLOTHES', 'ELECTRONICS', 'BEAUTY'], [299, 679, 85]],\n",
+    "    ['32984', 'David White', 41.0, ['BOOKS', 'HOME', 'SPORT'], [234, 329, 243]],\n",
+    "    ['33001', 'emily brown', 26.0, ['BEAUTY', 'HOME', 'FOOD'], [213, 659, 79]],\n",
+    "    ['33767', ' Maria Garcia', 33.0, ['CLOTHES', 'FOOD', 'BEAUTY'], [499, 189, 63]],\n",
+    "    ['33912', 'JOSE MARTINEZ', 22.0, ['SPORT', 'ELECTRONICS', 'HOME'], [259, 549, 109]],\n",
+    "    ['34009', 'lisa wilson ', 35.0, ['HOME', 'BOOKS', 'CLOTHES'], [329, 189, 329]],\n",
+    "    ['34278', 'James Lee', 28.0, ['BEAUTY', 'CLOTHES', 'ELECTRONICS'], [189, 299, 579]],\n",
+    "]\n",
+    "\n",
+    "\n",
+    "  #Paso 9\n",
+    "\n",
+    "num_filas = len(user_temp)\n",
+    "texto_num_filas = \"We have registered data on {} clients.\".format(num_filas)\n",
+    "print(texto_num_filas)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "\n",
+    "    \n",
+    "<div class=\"alert alert-block alert-danger\">\n",
+    "<b>Comentario del revisor #2</b> <a class=\"tocSkip\"></a>\n",
+    "\n",
+    "~~En este caso solucionas bien el ejercicio, pero no es necesario usar código repetido que no está generando ningún aporte en esta sección. Puedes eliminar lo siguiente. (y hacer el conteo sobre la lista original)~~\n",
+    "    \n",
+    "```python\n",
+    "\n",
+    "user_temp = []\n",
+    "for user in users:\n",
+    "    \n",
+    "    user_id = int(user[0])\n",
+    "\n",
+    "    user_name = user[1].replace(\"_\",\" \")\n",
+    "    user_name1 = user_name.strip()\n",
+    "    user_name2 = user_name1.split()\n",
+    "    fav_categories = user[3]\n",
+    "    total_spendings = user[4]\n",
+    "\n",
+    "    try:\n",
+    "        user_age = int(user[2])\n",
+    "    except error:\n",
+    "        print(\"Please provide your age as a numerical value.\")\n",
+    "    matriz = [ ]\n",
+    "    matriz.append(user_id)\n",
+    "    matriz.append(user_name2)\n",
+    "    matriz.append(user_age)\n",
+    "    matriz.append(fav_categories)\n",
+    "    matriz.append(total_spendings)\n",
+    "    user_temp.append(matriz)\n",
+    "\n",
+    "user_temp.sort()\n",
+    "    \n",
+    "```\n",
+    "\n",
+    "</div>  \n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "<div class=\"alert alert-block alert-success\">\n",
+    "<b>Comentario del revisor #3</b> <a class=\"tocSkip\"></a>\n",
+    "\n",
+    "Perfecto, gracias por tener en cuenta el comentario.\n",
+    "</div>  "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Paso 10\n",
+    "Apliquemos ahora todos los cambios a la lista de clientes. Para simplificar las cosas, te proporcionaremos una más corta. Debes:\n",
+    "\n",
+    "Eliminar todos los espacios iniciales y finales de los nombres, así como cualquier guion bajo.\n",
+    "Convertir todas las edades en números enteros.\n",
+    "Separar todos los nombres y apellidos en una sublista.\n",
+    "Guarda la lista modificada como una nueva lista llamada users_clean y muéstrala en la pantalla."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 15,
+   "metadata": {
+    "colab": {
+     "base_uri": "https://localhost:8080/"
+    },
+    "id": "kdMSRWX0zFMl",
+    "outputId": "8f2b3e3b-dc8e-4491-fb11-1703c9461ccf"
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[[32415, ['mike', 'reed'], 32, ['ELECTRONICS', 'SPORT', 'BOOKS'], [894, 213, 173]], [31980, ['kate', 'morgan'], 24, ['CLOTHES', 'BOOKS'], [439, 390]], [32156, ['john', 'doe'], 37, ['ELECTRONICS', 'HOME', 'FOOD'], [459, 120, 99]], [32761, ['SAMANTHA', 'SMITH'], 29, ['CLOTHES', 'ELECTRONICS', 'BEAUTY'], [299, 679, 85]], [32984, ['David', 'White'], 41, ['BOOKS', 'HOME', 'SPORT'], [234, 329, 243]], [33001, ['emily', 'brown'], 26, ['BEAUTY', 'HOME', 'FOOD'], [213, 659, 79]], [33767, ['Maria', 'Garcia'], 33, ['CLOTHES', 'FOOD', 'BEAUTY'], [499, 189, 63]], [33912, ['JOSE', 'MARTINEZ'], 22, ['SPORT', 'ELECTRONICS', 'HOME'], [259, 549, 109]], [34009, ['lisa', 'wilson'], 35, ['HOME', 'BOOKS', 'CLOTHES'], [329, 189, 329]], [34278, ['James', 'Lee'], 28, ['BEAUTY', 'CLOTHES', 'ELECTRONICS'], [189, 299, 579]]]\n"
+     ]
+    }
+   ],
+   "source": [
+    "from distutils.log import error\n",
+    "\n",
+    "encabezados = ['user_id', 'user_name', 'user_age', 'fav_categories', 'total_spendings']\n",
+    "users = [\n",
+    "    ['32415', ' mike_reed ', 32.0, ['ELECTRONICS', 'SPORT', 'BOOKS'], [894, 213, 173]],\n",
+    "    ['31980', 'kate morgan', 24.0, ['CLOTHES', 'BOOKS'], [439, 390]],\n",
+    "    ['32156', ' john doe ', 37.0, ['ELECTRONICS', 'HOME', 'FOOD'], [459, 120, 99]],\n",
+    "    ['32761', 'SAMANTHA SMITH', 29.0, ['CLOTHES', 'ELECTRONICS', 'BEAUTY'], [299, 679, 85]],\n",
+    "    ['32984', 'David White', 41.0, ['BOOKS', 'HOME', 'SPORT'], [234, 329, 243]],\n",
+    "    ['33001', 'emily brown', 26.0, ['BEAUTY', 'HOME', 'FOOD'], [213, 659, 79]],\n",
+    "    ['33767', ' Maria Garcia', 33.0, ['CLOTHES', 'FOOD', 'BEAUTY'], [499, 189, 63]],\n",
+    "    ['33912', 'JOSE MARTINEZ', 22.0, ['SPORT', 'ELECTRONICS', 'HOME'], [259, 549, 109]],\n",
+    "    ['34009', 'lisa wilson ', 35.0, ['HOME', 'BOOKS', 'CLOTHES'], [329, 189, 329]],\n",
+    "    ['34278', 'James Lee', 28.0, ['BEAUTY', 'CLOTHES', 'ELECTRONICS'], [189, 299, 579]],\n",
+    "]\n",
+    "\n",
+    "\n",
+    "user_temp = []\n",
+    "for user in users:\n",
+    "    \n",
+    "    user_id = int(user[0])\n",
+    "\n",
+    "    user_name = user[1].replace(\"_\",\" \")\n",
+    "    user_name1 = user_name.strip()\n",
+    "    user_name2 = user_name1.split()\n",
+    "    fav_categories = user[3]\n",
+    "    total_spendings = user[4]\n",
+    "\n",
+    "    try:\n",
+    "        user_age = int(user[2])\n",
+    "    except error:\n",
+    "        print(\"Please provide your age as a numerical value.\")\n",
+    "    matriz = [ ]\n",
+    "    matriz.append(user_id)\n",
+    "    matriz.append(user_name2)\n",
+    "    matriz.append(user_age)\n",
+    "    matriz.append(fav_categories)\n",
+    "    matriz.append(total_spendings)\n",
+    "    user_temp.append(matriz)\n",
+    "\n",
+    "print(user_temp)\n",
+    "user_temp.sort()\n",
+    "\n",
+    "\n",
+    "\n",
+    "\n",
+    "\n",
+    "\n",
+    "\n",
+    "\n",
+    "\n",
+    "\n",
+    "\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "\n",
+    "    \n",
+    "<div class=\"alert alert-block alert-danger\">\n",
+    "<b>Comentario del revisor #2</b> <a class=\"tocSkip\"></a>\n",
+    "\n",
+    "~~Buen trabajo con las modificaciones sobre la lista, solo no es necesario hacer los prints.~~\n",
+    "\n",
+    "</div>  \n",
+    "\n",
+    "<div class=\"alert alert-block alert-success\">\n",
+    "<b>Comentario del revisor #3</b> <a class=\"tocSkip\"></a>\n",
+    "\n",
+    "Perfecto, buen trabajo.\n",
+    "</div>  \n",
+    "\n"
+   ]
+  }
+ ],
+ "metadata": {
+  "ExecuteTimeLog": [
+   {
+    "duration": 9,
+    "start_time": "2024-09-03T20:32:40.409Z"
+   },
+   {
+    "duration": 9,
+    "start_time": "2024-09-03T20:34:10.187Z"
+   },
+   {
+    "duration": 6,
+    "start_time": "2024-09-03T20:40:59.670Z"
+   },
+   {
+    "duration": 6,
+    "start_time": "2024-09-03T20:41:21.824Z"
+   },
+   {
+    "duration": 5,
+    "start_time": "2024-09-03T20:42:32.256Z"
+   },
+   {
+    "duration": 5,
+    "start_time": "2024-09-03T20:51:37.063Z"
+   },
+   {
+    "duration": 4,
+    "start_time": "2024-09-03T20:52:00.862Z"
+   },
+   {
+    "duration": 4,
+    "start_time": "2024-09-03T20:53:36.930Z"
+   },
+   {
+    "duration": 6,
+    "start_time": "2024-09-03T20:54:59.091Z"
+   },
+   {
+    "duration": 7,
+    "start_time": "2024-09-03T20:56:40.458Z"
+   },
+   {
+    "duration": 7,
+    "start_time": "2024-09-03T20:57:08.189Z"
+   },
+   {
+    "duration": 6,
+    "start_time": "2024-09-03T20:57:23.376Z"
+   },
+   {
+    "duration": 7,
+    "start_time": "2024-09-03T20:58:22.069Z"
+   },
+   {
+    "duration": 7,
+    "start_time": "2024-09-03T20:58:39.113Z"
+   },
+   {
+    "duration": 6,
+    "start_time": "2024-09-03T20:58:46.508Z"
+   },
+   {
+    "duration": 7,
+    "start_time": "2024-09-03T20:59:00.856Z"
+   },
+   {
+    "duration": 7,
+    "start_time": "2024-09-03T20:59:32.514Z"
+   },
+   {
+    "duration": 6,
+    "start_time": "2024-09-03T20:59:38.607Z"
+   },
+   {
+    "duration": 7,
+    "start_time": "2024-09-03T21:02:19.844Z"
+   },
+   {
+    "duration": 7,
+    "start_time": "2024-09-03T21:03:49.476Z"
+   },
+   {
+    "duration": 7,
+    "start_time": "2024-09-04T12:39:20.533Z"
+   },
+   {
+    "duration": 5,
+    "start_time": "2024-09-04T12:44:21.252Z"
+   },
+   {
+    "duration": 4,
+    "start_time": "2024-09-04T12:45:49.461Z"
+   },
+   {
+    "duration": 6,
+    "start_time": "2024-09-04T13:23:36.253Z"
+   },
+   {
+    "duration": 5,
+    "start_time": "2024-09-04T13:24:11.806Z"
+   },
+   {
+    "duration": 5,
+    "start_time": "2024-09-04T13:25:59.279Z"
+   },
+   {
+    "duration": 157,
+    "start_time": "2024-09-04T13:28:21.111Z"
+   },
+   {
+    "duration": 13,
+    "start_time": "2024-09-04T13:28:40.414Z"
+   },
+   {
+    "duration": 13,
+    "start_time": "2024-09-04T13:28:52.665Z"
+   },
+   {
+    "duration": 13,
+    "start_time": "2024-09-04T13:29:28.830Z"
+   },
+   {
+    "duration": 3,
+    "start_time": "2024-09-04T13:30:47.767Z"
+   },
+   {
+    "duration": 3,
+    "start_time": "2024-09-04T13:31:09.866Z"
+   },
+   {
+    "duration": 7,
+    "start_time": "2024-09-04T13:31:35.233Z"
+   },
+   {
+    "duration": 3,
+    "start_time": "2024-09-04T13:33:04.895Z"
+   },
+   {
+    "duration": 5,
+    "start_time": "2024-09-04T13:33:38.190Z"
+   },
+   {
+    "duration": 9,
+    "start_time": "2024-09-04T13:34:02.610Z"
+   },
+   {
+    "duration": 7,
+    "start_time": "2024-09-04T13:34:37.480Z"
+   },
+   {
+    "duration": 7,
+    "start_time": "2024-09-04T13:34:45.528Z"
+   },
+   {
+    "duration": 14,
+    "start_time": "2024-09-04T13:36:02.500Z"
+   },
+   {
+    "duration": 3,
+    "start_time": "2024-09-04T13:36:10.128Z"
+   },
+   {
+    "duration": 4,
+    "start_time": "2024-09-04T13:36:31.417Z"
+   },
+   {
+    "duration": 5,
+    "start_time": "2024-09-04T13:37:10.533Z"
+   },
+   {
+    "duration": 3,
+    "start_time": "2024-09-04T13:37:38.613Z"
+   },
+   {
+    "duration": 4,
+    "start_time": "2024-09-04T13:37:50.299Z"
+   },
+   {
+    "duration": 2,
+    "start_time": "2024-09-04T13:38:03.283Z"
+   },
+   {
+    "duration": 2,
+    "start_time": "2024-09-04T13:39:19.609Z"
+   },
+   {
+    "duration": 3,
+    "start_time": "2024-09-04T13:39:31.541Z"
+   },
+   {
+    "duration": 4,
+    "start_time": "2024-09-04T13:41:20.171Z"
+   }
+  ],
+  "colab": {
+   "provenance": []
+  },
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.9.19"
+  },
+  "toc": {
+   "base_numbering": 1,
+   "nav_menu": {},
+   "number_sections": true,
+   "sideBar": true,
+   "skip_h1_title": true,
+   "title_cell": "Table of Contents",
+   "title_sidebar": "Contents",
+   "toc_cell": false,
+   "toc_position": {},
+   "toc_section_display": true,
+   "toc_window_display": false
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 1
+}
